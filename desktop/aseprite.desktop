@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Aseprite
+GenericName=Sprite Editor
+Comment=Animated sprite editor & pixel art tool
+Icon=aseprite
+Categories=Graphics;2DGraphics;RasterGraphics;
+Exec=sh -c \$HOME/aseprite-resources/aseprite/build/bin/aseprite
+Terminal=false
+StartupNotify=false
+StartupWMClass=allegro

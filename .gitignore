@@ -1,0 +1,4 @@
+# Prevent pushing a PR containing the aseprite binary since that is illegal
+aseprite/
+# Prevent pushing a PR containing the Skia binary as theres no reason for it to be there.
+skia/
