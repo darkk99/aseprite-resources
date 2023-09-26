@@ -30,15 +30,13 @@ if [ ! -d $ASEPRITE_DIR ]; then
   git clone --recursive https://github.com/aseprite/aseprite.git $ASEPRITE_DIR
 fi
 
-if [ ! -d $SKIA_DIR ]; then
-  echo "Downloading Skia m102..."
-  wget https://github.com/aseprite/skia/releases/download/m102-861e4743af/Skia-Linux-Release-x64-libc++.zip -P /tmp
+echo "Downloading Skia m102..."
+wget https://github.com/aseprite/skia/releases/download/m102-861e4743af/Skia-Linux-Release-x64-libc++.zip -P /tmp
 
-  echo "Making directory $SKIA_DIR..."
-  mkdir -p $ASEPRITE_RESOURCES_DIR/skia
+echo "Making directory $SKIA_DIR..."
+mkdir -p $ASEPRITE_RESOURCES_DIR/skia
 
-  echo "Unzipping /tmp/Skia-Linux-Release-x64-libc++.zip into $SKIA_DIR..."
-  unzip /tmp/Skia-Linux-Release-x64-libc++.zip -d $SKIA_DIR
-fi
+echo "Unzipping /tmp/Skia-Linux-Release-x64-libc++.zip into $SKIA_DIR..."
+unzip -o /tmp/Skia-Linux-Release-x64-libc++.zip -d $SKIA_DIR
 
 
