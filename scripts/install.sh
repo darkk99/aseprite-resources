@@ -2,11 +2,18 @@
 
 set -e
 
+echo "Making sure script isn't running as root..."
+if [ "$EUID" = 0 ];then
+  echo -e "Do not run this script as root.\nAborting..."
+  exit 1
+fi
+
+
 echo 'Running `install-deps.sh` script...'
-$HOME/aseprite-resources/scripts/lib/install-deps.sh
+./lib/install-deps.sh
 
 echo 'Running `compile.sh` script...'
-$HOME/aseprite-resources/scripts/lib/compile.sh
+./lib/compile.sh
 
 echo 'Running `setup-desktop-file.sh` script...'
-$HOME/aseprite-resources/scripts/lib/setup-desktop-file.sh
+./lib/setup-desktop-file.sh

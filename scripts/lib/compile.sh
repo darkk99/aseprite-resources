@@ -1,7 +1,10 @@
 #!/bin/sh
+#
+ASEPRITE_RESOURCES_DIR=$(cd .. && pwd)
+
 set -e
 echo 'NOTE: This script *requires* the `install-deps.sh` script to function properly.'
-cd $HOME/aseprite-resources/aseprite
+cd $ASEPRITE_RESOURCES_DIR/aseprite
 [ -f ./build ] && rm ./build -rf
 git pull
 git submodule update --init --recursive

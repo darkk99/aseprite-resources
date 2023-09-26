@@ -4,14 +4,9 @@
 
 set -e
 
-echo "Making sure script isn't running as root..."
-if [ "$EUID" = 0 ];then
-  echo "Do not run this script as root.\nAborting..."
-  exit 1
-fi
-
-SKIA_DIR=$HOME/aseprite-resources/deps/skia
-ASEPRITE_DIR=$HOME/aseprite-resources/aseprite
+ASEPRITE_RESOURCES_DIR=$(cd .. && pwd)
+SKIA_DIR=$ASEPRITE_RESOURCES_DIR/skia
+ASEPRITE_DIR=$ASEPRITE_RESOURCES_DIR/aseprite
 
 echo "Determining which package manager to use..."
 if [ -f /usr/bin/apt-get ]; then
@@ -31,7 +26,7 @@ else
 fi
 
 if [ ! -d $ASEPRITE_DIR ]; then
-  echo "Cloning aseprite/aseprite.git into $HOME/aseprite/resources/aseprite..."
+  echo "Cloning aseprite/aseprite.git..."
   git clone --recursive https://github.com/aseprite/aseprite.git $ASEPRITE_DIR
 fi
 
@@ -40,7 +35,7 @@ if [ ! -d $SKIA_DIR ]; then
   wget https://github.com/aseprite/skia/releases/download/m102-861e4743af/Skia-Linux-Release-x64-libc++.zip -P /tmp
 
   echo "Making directory $SKIA_DIR..."
-  mkdir -p $HOME/aseprite-resources/skia
+  mkdir -p $ASEPRITE_RESOURCES_DIR/skia
 
   echo "Unzipping /tmp/Skia-Linux-Release-x64-libc++.zip into $SKIA_DIR..."
   unzip /tmp/Skia-Linux-Release-x64-libc++.zip -d $SKIA_DIR
