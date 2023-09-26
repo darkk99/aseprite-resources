@@ -17,3 +17,5 @@ echo 'Running `compile.sh` script...'
 
 echo 'Running `setup-desktop-file.sh` script...'
 ./lib/setup-desktop-file.sh
+
+echo "Desktop file successfully installed! You will have to add $(cd .. && pwd)/aseprite/build/bin/aseprite to your \$PATH"

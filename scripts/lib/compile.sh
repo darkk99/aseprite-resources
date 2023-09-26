@@ -24,4 +24,3 @@ cmake \
   -G Ninja \
   ..
 ninja aseprite
-echo "\n\n\n\n\n"'Done! Installed binary `aseprite` into '"$ASEPRITE_RESOURCES_DIR/aseprite/build/bin/aseprite.\nPlease do not delete or move this file or the .desktop file will not work.\nDo not share this binary with others online, as that doesn't comply with Aseprite's license."
